@@ -1,27 +1,35 @@
-# opencode agent guidelines
+# Advanced OpenCode Integration - AGENTS.md
 
-## Build/Test Commands
+## Agent Registry
 
-- **Install**: `bun install`
-- **Run**: `bun run index.ts`
-- **Typecheck**: `bun run typecheck` (npm run typecheck)
-- **Test**: `bun test` (runs all tests)
-- **Single test**: `bun test test/tool/tool.test.ts` (specific test file)
+This file tracks playbook versions, metrics, and optimization targets for the self-improving agent system.
 
-## Code Style
+### Playbook Versions
 
-- **Runtime**: Bun with TypeScript ESM modules
-- **Imports**: Use relative imports for local modules, named imports preferred
-- **Types**: Zod schemas for validation, TypeScript interfaces for structure
-- **Naming**: camelCase for variables/functions, PascalCase for classes/namespaces
-- **Error handling**: Use Result patterns, avoid throwing exceptions in tools
-- **File structure**: Namespace-based organization (e.g., `Tool.define()`, `Session.create()`)
+| Agent | Version | Last Updated | Success Rate | Strategies Count |
+|-------|---------|--------------|--------------|------------------|
+| build | 1.0.0   | 2025-11-25   | N/A          | 0                |
+| plan  | 1.0.0   | 2025-11-25   | N/A          | 0                |
+| general | 1.0.0 | 2025-11-25   | N/A          | 0                |
 
-## Architecture
+### Optimization Targets
 
-- **Tools**: Implement `Tool.Info` interface with `execute()` method
-- **Context**: Pass `sessionID` in tool context, use `App.provide()` for DI
-- **Validation**: All inputs validated with Zod schemas
-- **Logging**: Use `Log.create({ service: "name" })` pattern
-- **Storage**: Use `Storage` namespace for persistence
-- **API Client**: Go TUI communicates with TypeScript server via stainless SDK. When adding/modifying server endpoints in `packages/opencode/src/server/server.ts`, ask the user to generate a new client SDK to proceed with client-side changes.
+- **Target Success Rate**: 75%
+- **Optimization Frequency**: Nightly (simulated)
+- **Curator Threshold**: 75% success rate for strategy promotion
+
+### Integration Status
+
+- ✅ BAML: Type-safe execution layer
+- ✅ POML: Prompt orchestration parser
+- ✅ ACE: Generator/Reflector/Curator modules
+- ✅ DSPy: Self-improvement optimizer
+
+### Self-Improving Loop
+
+1. **Developer Request** → POML renders prompt with ACE strategies
+2. **BAML Execution** → Type-safe execution with error correction
+3. **DSPy Logging** → Outcome tracking and reflection
+4. **Nightly Job** → DSPy reflects on failures, extracts lessons
+5. **ACE Curator** → Merges/prunes strategies (75% threshold)
+6. **Playbook Update** → POML playbook auto-updates, version bumps

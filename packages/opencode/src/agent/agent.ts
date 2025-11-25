@@ -6,6 +6,10 @@ import PROMPT_GENERATE from "./generate.txt"
 import { SystemPrompt } from "../session/system"
 import { Instance } from "../project/instance"
 import { mergeDeep } from "remeda"
+import { POMLParser } from "../poml/parser"
+import { ACEManager } from "../ace/manager"
+import { DSPyOptimizer } from "../dspy/optimizer"
+import { executeAgentFunction } from "../baml/client"
 
 export namespace Agent {
   export const Info = z
@@ -40,6 +44,11 @@ export namespace Agent {
   export type Info = z.infer<typeof Info>
 
   const state = Instance.state(async () => {
+    // Initialize Advanced Integration Components
+    const aceManager = new ACEManager()
+    const dspyOptimizer = new DSPyOptimizer(aceManager)
+    const pomlParser = new POMLParser()
+
     const cfg = await Config.get()
     const defaultTools = cfg.tools ?? {}
     const defaultPermission: Info["permission"] = {
