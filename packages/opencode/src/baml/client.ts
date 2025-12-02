@@ -7,10 +7,7 @@ export const baml = new BamlClient({
 })
 
 // Type-safe wrapper for agent functions
-export async function executeAgentFunction<T>(
-  functionName: string,
-  args: any
-): Promise<T> {
+export async function executeAgentFunction<T>(functionName: string, args: any): Promise<T> {
   try {
     const result = await baml.call(functionName, args)
     return result as T

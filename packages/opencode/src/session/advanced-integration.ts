@@ -6,30 +6,30 @@ let aceManagerInstance: ACEManager | null = null
 let dspyOptimizerInstance: DSPyOptimizer | null = null
 
 export function getACEManager(): ACEManager {
-    if (!aceManagerInstance) {
-        aceManagerInstance = new ACEManager()
-    }
-    return aceManagerInstance
+  if (!aceManagerInstance) {
+    aceManagerInstance = new ACEManager()
+  }
+  return aceManagerInstance
 }
 
 export function getDSPyOptimizer(): DSPyOptimizer {
-    if (!dspyOptimizerInstance) {
-        dspyOptimizerInstance = new DSPyOptimizer(getACEManager())
-    }
-    return dspyOptimizerInstance
+  if (!dspyOptimizerInstance) {
+    dspyOptimizerInstance = new DSPyOptimizer(getACEManager())
+  }
+  return dspyOptimizerInstance
 }
 
 // Hook for session initialization
 export function initializeAdvancedIntegration() {
-    console.log("🚀 Initializing Advanced Integration (BAML/POML/ACE/DSPy)")
-    getACEManager()
-    getDSPyOptimizer()
+  console.log("🚀 Initializing Advanced Integration (BAML/POML/ACE/DSPy)")
+  getACEManager()
+  getDSPyOptimizer()
 }
 
 // Hook for optimization scheduler
 export async function runOptimizationCycle() {
-    console.log("🔄 Running DSPy optimization cycle...")
-    const optimizer = getDSPyOptimizer()
-    await optimizer.optimize()
-    console.log("✅ Optimization cycle complete")
+  console.log("🔄 Running DSPy optimization cycle...")
+  const optimizer = getDSPyOptimizer()
+  await optimizer.optimize()
+  console.log("✅ Optimization cycle complete")
 }

@@ -5,6 +5,7 @@
 The A2A protocol is an open standard for agent-to-agent communication, enabling seamless collaboration between AI agents regardless of their underlying frameworks.
 
 ### Key Features
+
 - **Universal Interoperability**: Agents from different providers can communicate
 - **Capability Discovery**: Agents advertise skills via "Agent Cards" (JSON)
 - **Task-Oriented**: Supports immediate actions and long-running processes
@@ -22,6 +23,7 @@ Client Agent → A2A Protocol → Remote Agent(s)
 ### Integration with OpenCode
 
 We will implement:
+
 1. **A2A Server**: OpenCode agents expose A2A endpoints
 2. **A2A Client**: OpenCode agents can call other A2A agents
 3. **Agent Cards**: Auto-generated from OpenCode agent configs

@@ -6,11 +6,11 @@ This file tracks playbook versions, metrics, and optimization targets for the se
 
 ### Playbook Versions
 
-| Agent | Version | Last Updated | Success Rate | Strategies Count |
-|-------|---------|--------------|--------------|------------------|
-| build | 1.0.0   | 2025-11-25   | N/A          | 0                |
-| plan  | 1.0.0   | 2025-11-25   | N/A          | 0                |
-| general | 1.0.0 | 2025-11-25   | N/A          | 0                |
+| Agent   | Version | Last Updated | Success Rate | Strategies Count |
+| ------- | ------- | ------------ | ------------ | ---------------- |
+| build   | 1.0.0   | 2025-11-25   | N/A          | 0                |
+| plan    | 1.0.0   | 2025-11-25   | N/A          | 0                |
+| general | 1.0.0   | 2025-11-25   | N/A          | 0                |
 
 ### Optimization Targets
 
